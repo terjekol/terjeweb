@@ -1,0 +1,134 @@
+#app {
+  display: grid;
+  gap: 1.25rem;
+}
+
+#app[hidden],
+#app [hidden] {
+  display: none;
+}
+
+.exercise-controls,
+.exercise-entry,
+.solver-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.exercise-controls {
+  justify-content: space-between;
+}
+
+#level-label {
+  margin-bottom: 0.35rem;
+  color: var(--site-muted);
+}
+
+#app button {
+  min-height: 2.75rem;
+  width: auto;
+  margin: 0;
+}
+
+.solver-buttons button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.65rem;
+}
+
+.solver-buttons button[aria-pressed="true"] {
+  color: #bfeeff;
+  border-color: #79dcff;
+  background: #233748;
+}
+
+.solver-workspace {
+  min-width: 0;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  border: 1px solid var(--site-line);
+  border-radius: 0.6rem;
+  background: var(--site-surface);
+}
+
+.math {
+  display: flex;
+  min-height: 6rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+  color: #e0e9f5;
+  font-size: clamp(1.65rem, 5vw, 3rem);
+}
+
+.math .flex {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.math .vertical {
+  flex-direction: column;
+}
+
+.math .fraction {
+  width: 100%;
+  border-bottom: 2px solid currentColor;
+}
+
+#app .term {
+  padding: 0 0.12em;
+  border: 1px solid #79dcff;
+  border-radius: 0.2em;
+  background: #233748;
+  color: #bfeeff;
+  font-size: inherit;
+}
+
+#app .term:hover {
+  background: #324c65;
+}
+
+#solver-message {
+  margin-block: 0.7rem;
+}
+
+#solver-message.error {
+  color: #ffb5a6;
+}
+
+.svgIcon {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+  fill: currentColor;
+}
+
+#solver-history {
+  font-family: var(--pico-font-family-monospace);
+  overflow-wrap: anywhere;
+}
+
+#solver-history [aria-current="step"] {
+  font-weight: 700;
+  color: #bfeeff;
+}
+
+.exercise-entry input {
+  flex: 1 1 13rem;
+  margin-bottom: 0;
+}
+
+#equation-help {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--site-muted);
+}
+
+#solver-video iframe {
+  display: block;
+  width: min(100%, 35rem);
+  aspect-ratio: 16 / 9;
+  border: 0;
+}

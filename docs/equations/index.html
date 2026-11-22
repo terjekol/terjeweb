@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nb" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Et interaktivt algebraeksperiment der du løser ligninger steg for steg.">
+  <title>Ligningsløser | Terje Kolderup</title>
+  <link rel="stylesheet" href="../assets/pico.classless.min.css">
+  <link rel="stylesheet" href="../assets/site.css">
+  <link rel="stylesheet" href="solver.css">
+  <script type="module" src="solver.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#innhold">Hopp til innhold</a>
+  <header class="site-header">
+    <nav aria-label="Hovedmeny">
+      <ul><li><a class="site-name" href="../">kolderup.net</a></li></ul>
+      <ul>
+        <li><a href="../#prosjekter">Prosjekter</a></li>
+        <li><a href="../#boker">Bøker</a></li>
+        <li><a href="../#om-meg">Om meg</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="innhold" tabindex="-1">
+    <div class="page-intro reading-width">
+      <p class="page-status">Algebraeksperiment</p>
+      <h1>Ligningsløser</h1>
+      <p class="intro">Løs én ligning steg for steg. Velg en operasjon og deretter de markerte leddene eller faktorene du vil bruke.</p>
+    </div>
+
+    <noscript><p>Slå på JavaScript for å bruke ligningsløseren.</p></noscript>
+    <section id="app" aria-label="Interaktiv ligningsløser" hidden>
+      <div class="exercise-controls">
+        <div>
+          <p id="level-label">Nivå</p>
+          <div id="solver-levels" class="solver-buttons" role="group" aria-labelledby="level-label"></div>
+        </div>
+        <button type="button" class="secondary outline" id="new-exercise">Ny oppgave</button>
+      </div>
+
+      <div class="solver-workspace">
+        <div id="mathContent" class="math" tabindex="-1" role="group"></div>
+        <p id="solver-message" role="status"></p>
+        <div id="solver-menu" class="solver-buttons" role="group" aria-label="Operasjoner"></div>
+      </div>
+      <details id="history-panel" hidden>
+        <summary>Regnehistorikk</summary>
+        <ol id="solver-history"></ol>
+      </details>
+
+      <form id="custom-exercise">
+        <label for="equation">Skriv din egen ligning</label>
+        <div class="exercise-entry">
+          <input type="text" id="equation" name="equation" maxlength="120"
+            placeholder="2*x + 3 = 11" aria-describedby="equation-help"
+            autocomplete="off" spellcheck="false" autocapitalize="off">
+          <button type="submit">Bruk ligningen</button>
+        </div>
+        <small id="equation-help">Bruk heltall, små bokstaver og <code>*</code> for gange. Del bare på faktorer du vet er ulike null.</small>
+      </form>
+      <details id="solver-video">
+        <summary>Forklaringsvideo for valgt nivå</summary>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <ul>
+      <li>Terje Kolderup</li>
+      <li><a href="https://github.com/terjekol">GitHub</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
