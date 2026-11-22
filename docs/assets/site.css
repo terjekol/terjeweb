@@ -1,0 +1,248 @@
+:root {
+  --site-line: #303b4b;
+  --site-muted: #aebacf;
+  --site-surface: #171f2c;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body > main {
+  flex: 1;
+}
+
+body > .site-header {
+  border-bottom: 1px solid var(--site-line);
+  padding-block: 0.4rem;
+}
+
+.site-header nav {
+  flex-wrap: wrap;
+}
+
+.site-header nav li {
+  padding-inline: 0.55rem;
+}
+
+.site-name {
+  color: var(--pico-h1-color);
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 3px solid #79dcff;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 1;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: var(--pico-background-color);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.hero {
+  display: grid;
+  align-items: center;
+  gap: clamp(1.75rem, 5vw, 4.5rem);
+  padding-block: clamp(2rem, 6vw, 5rem);
+  margin: 0;
+}
+
+.hero h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.intro {
+  max-width: 46ch;
+  color: var(--site-muted);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.equation-preview {
+  margin: 0;
+  border: 1px solid var(--site-line);
+  border-radius: 0.75rem;
+  background: var(--site-surface);
+  overflow: hidden;
+}
+
+.equation-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 0.25rem;
+  min-height: 11rem;
+  padding: 1.25rem;
+  background-image:
+    linear-gradient(#34435659 1px, transparent 1px),
+    linear-gradient(90deg, #34435659 1px, transparent 1px);
+  background-size: 1.35rem 1.35rem;
+}
+
+.equation-grid code {
+  display: grid;
+  grid-template-columns: 7ch 1ch 2ch;
+  gap: 1ch;
+  padding: 0;
+  background: transparent;
+  color: var(--site-muted);
+  font-size: clamp(1.15rem, 2.4vw, 1.65rem);
+}
+
+.equation-grid code span:first-child {
+  text-align: right;
+}
+
+.equation-grid code:last-child {
+  color: #8be3ff;
+}
+
+.equation-preview figcaption {
+  padding: 0.65rem 1rem;
+  border-top: 1px solid var(--site-line);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.content-section {
+  padding-block: clamp(1.6rem, 4vw, 2.8rem);
+  border-top: 1px solid var(--site-line);
+  margin-bottom: 0;
+}
+
+.project-grid,
+.mode-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-grid article,
+.mode-grid article {
+  margin: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--site-line);
+  border-radius: 0.6rem;
+  background: var(--site-surface);
+  box-shadow: none;
+}
+
+.project-grid h3,
+.mode-grid h3,
+.book-list h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.12rem;
+}
+
+.project-grid p,
+.mode-grid p,
+.book-list p {
+  margin-bottom: 0;
+  color: var(--site-muted);
+}
+
+.book-list {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.book-list li {
+  list-style: none;
+  padding-block: 0.75rem;
+}
+
+.book-list a {
+  display: inline-block;
+  margin: 0.3rem 0.8rem 0 0;
+}
+
+.reading-width {
+  max-width: 68ch;
+}
+
+.page-intro {
+  padding-block: clamp(1.5rem, 5vw, 3.5rem) 1.5rem;
+}
+
+.page-intro h1 {
+  overflow-wrap: break-word;
+}
+
+.page-status {
+  margin-bottom: 0.4rem;
+  color: var(--site-muted);
+  font-size: 0.9rem;
+}
+
+.mode-grid {
+  margin-bottom: 1.25rem;
+}
+
+.mode-grid .mode-example {
+  margin-bottom: 0.9rem;
+  padding: 0.65rem;
+  border: 1px solid var(--site-line);
+  border-radius: 0.3rem;
+  color: #8be3ff;
+  font-family: var(--pico-font-family-monospace);
+}
+
+.site-footer {
+  border-top: 1px solid var(--site-line);
+  color: var(--site-muted);
+}
+
+.site-footer ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer li {
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mode-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.primary-link {
+  display: inline-block;
+  padding: 0.6rem 0.95rem;
+  border: 1px solid var(--pico-primary-border);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  text-decoration: none;
+}
+
+.primary-link:hover {
+  border-color: var(--pico-primary-hover-border);
+  background: var(--pico-primary-hover-background);
+  color: var(--pico-primary-inverse);
+}
